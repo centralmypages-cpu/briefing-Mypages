@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Briefing MyPages | Elite Experience</title>
+  
+  <!-- Fontes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Plus Jakarta Sans', 'sans-serif'],
+            inter: ['Inter', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#f4efe6',
+              400: '#d4b785',
+              500: '#c5a368',
+              600: '#b08e54',
+              900: '#101827',
+            }
+          },
+          boxShadow: {
+            '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style type="text/tailwindcss">
+    @layer base {
+      body { 
+        @apply font-sans bg-[#fafafa] text-[#101827] antialiased;
+      }
+      h1, h2, h3, h4, button {
+        @apply tracking-tight;
+      }
+    }
+
+    @layer components {
+      .font-inter { font-family: 'Inter', sans-serif; }
+      
+      .glass-ui {
+        @apply bg-white/90 backdrop-blur-[10px] border border-black/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.06)];
+      }
+      
+      .bg-mesh {
+        background-color: #ffffff;
+        background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,0.03) 0, transparent 50%), 
+                          radial-gradient(at 50% 0%, hsla(225,39%,30%,0.03) 0, transparent 50%), 
+                          radial-gradient(at 100% 0%, hsla(339,49%,30%,0.03) 0, transparent 50%);
+      }
+
+      .step-fade {
+        animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(10px); filter: blur(4px); }
+        to { opacity: 1; transform: translateY(0); filter: blur(0); }
+      }
+
+      .choice-card {
+        @apply transition-all duration-500 hover:-translate-y-1;
+      }
+      
+      .custom-scrollbar::-webkit-scrollbar {
+        width: 4px;
+      }
+      .custom-scrollbar::-webkit-scrollbar-thumb {
+        @apply bg-slate-900 rounded-full;
+      }
+    }
+  </style>
+<script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.3",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
+    "vite": "https://esm.sh/vite@^7.3.1",
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="bg-mesh min-h-screen">
+  <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
