@@ -1,20 +1,49 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# Briefing MyPages | Elite Conversion Experience
 
-# Run and deploy your AI Studio app
+![Versão](https://img.shields.io/badge/version-2.0-black?style=for-the-badge)
+![React](https://img.shields.io/badge/React-19-blue?style=for-the-badge&logo=react)
+![Tailwind](https://img.shields.io/badge/Tailwind-CSS-38B2AC?style=for-the-badge&logo=tailwind-css)
 
-This contains everything you need to run your app locally.
+Uma ferramenta interativa de alta conversão projetada para guiar clientes através de um processo de briefing estratégico. Focada em **UX (User Experience)**, **CRO (Conversion Rate Optimization)** e **Copywriting**.
 
-View your app in AI Studio: https://ai.studio/apps/drive/1iRZ2IkmDJcXKqmnq0Na75_akvQTy02i6
+## 🚀 Funcionalidades
 
-## Run Locally
+- **Interface Glassmorphism**: Design premium e minimalista.
+- **Fluxo Estratégico em 7 Etapas**: Desde a identificação da marca até estratégias de tráfego.
+- **Engenharia de Negócio**: Coleta de dados sobre dores, desejos e diferenciais competitivos.
+- **Gerador de Protocolo**: Formata todas as respostas em um sumário profissional pronto para cópia.
+- **Integração WhatsApp**: Envio direto dos dados para a equipe de desenvolvimento.
 
-**Prerequisites:**  Node.js
+## 🛠️ Tecnologias Utilizadas
 
+- [React 19](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Tailwind CSS](https://tailwindcss.com/)
+- [Lucide React](https://lucide.dev/) (Ícones)
+- [ESM.sh](https://esm.sh/) (Gerenciamento de módulos sem build complexo)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+## 📦 Como rodar localmente
+
+1. Clone o repositório:
+   ```bash
+   git clone https://github.com/seu-usuario/briefing-mypages.git
+   ```
+2. Instale as dependências:
+   ```bash
+   npm install
+   ```
+3. Inicie o servidor de desenvolvimento:
+   ```bash
+   npm run dev
+   ```
+
+## 🌐 Deploy
+
+Este projeto está pronto para ser hospedado no **GitHub Pages**, **Vercel** ou **Netlify**. Para gerar a versão de produção:
+
+```bash
+npm run build
+```
+
+---
+Desenvolvido por **MyPages Elite Studio** &copy; 2025
