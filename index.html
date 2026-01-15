@@ -6,14 +6,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Briefing MyPages | Elite Experience</title>
   
-  <!-- Fontes -->
+  <!-- Fontes Premium -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   
-  <!-- Tailwind CSS CDN -->
+  <!-- Tailwind CDN (Modo compatível com Vercel) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  
   <script>
     tailwind.config = {
       theme: {
@@ -24,73 +23,50 @@
           },
           colors: {
             brand: {
-              50: '#f4efe6',
-              400: '#d4b785',
-              500: '#c5a368',
-              600: '#b08e54',
               900: '#101827',
             }
-          },
-          boxShadow: {
-            '3xl': '0 35px 60px -15px rgba(0, 0, 0, 0.3)',
           }
         }
       }
     }
   </script>
-
+  
   <style type="text/tailwindcss">
     @layer base {
       body { 
-        @apply font-sans bg-[#fafafa] text-[#101827] antialiased;
-      }
-      h1, h2, h3, h4, button {
-        @apply tracking-tight;
+        @apply antialiased text-[#101827] bg-white;
+        background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,0.04) 0, transparent 50%), 
+                          radial-gradient(at 50% 0%, hsla(225,39%,30%,0.04) 0, transparent 50%), 
+                          radial-gradient(at 100% 0%, hsla(339,49%,30%,0.04) 0, transparent 50%);
+        background-attachment: fixed;
       }
     }
-
     @layer components {
-      .font-inter { font-family: 'Inter', sans-serif; }
-      
       .glass-ui {
-        @apply bg-white/90 backdrop-blur-[10px] border border-black/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.06)];
+        @apply bg-white/90 backdrop-blur-xl border border-black/5 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.08)];
       }
-      
-      .bg-mesh {
-        background-color: #ffffff;
-        background-image: radial-gradient(at 0% 0%, hsla(253,16%,7%,0.03) 0, transparent 50%), 
-                          radial-gradient(at 50% 0%, hsla(225,39%,30%,0.03) 0, transparent 50%), 
-                          radial-gradient(at 100% 0%, hsla(339,49%,30%,0.03) 0, transparent 50%);
-      }
-
-      .step-fade {
-        animation: fadeIn 0.6s cubic-bezier(0.22, 1, 0.36, 1);
-      }
-
-      @keyframes fadeIn {
-        from { opacity: 0; transform: translateY(10px); filter: blur(4px); }
-        to { opacity: 1; transform: translateY(0); filter: blur(0); }
-      }
-
       .choice-card {
-        @apply transition-all duration-500 hover:-translate-y-1;
+        @apply transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl;
       }
-      
-      .custom-scrollbar::-webkit-scrollbar {
-        width: 4px;
+      .step-fade {
+        animation: fadeIn 0.8s cubic-bezier(0.22, 1, 0.36, 1);
       }
-      .custom-scrollbar::-webkit-scrollbar-thumb {
-        @apply bg-slate-900 rounded-full;
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); filter: blur(8px); }
+        to { opacity: 1; transform: translateY(0); filter: blur(0); }
       }
     }
   </style>
-<script type="importmap">
+
+  <script type="importmap">
 {
   "imports": {
     "react": "https://esm.sh/react@^19.2.3",
+    "react-dom": "https://esm.sh/react-dom@^19.2.3",
+    "react-dom/client": "https://esm.sh/react-dom@^19.2.3/client",
+    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "vite": "https://esm.sh/vite@^7.3.1",
     "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
   }
@@ -98,9 +74,8 @@
 </script>
 <link rel="stylesheet" href="/index.css">
 </head>
-<body class="bg-mesh min-h-screen">
+<body>
   <div id="root"></div>
-  <!-- Removido o / para garantir carregamento relativo -->
   <script type="module" src="index.tsx"></script>
 <script type="module" src="/index.tsx"></script>
 </body>
